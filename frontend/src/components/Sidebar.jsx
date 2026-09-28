@@ -104,29 +104,33 @@ function Sidebar({ collapsed, onToggle }) {
             GESTIÓN DE TRABAJO
           </p>
 
+         <SidebarItem
+         icon={Clock3}
+         label="Resumen"
+         to="/resumen"
+         collapsed={collapsed}
+         />
+
+        <SidebarItem
+        icon={Ticket}
+        label="Tickets"
+        to="/tickets"
+        collapsed={collapsed}
+        />
+
           <SidebarItem
-            icon={Clock3}
-            label="Resumen"
-            collapsed={collapsed}
+          icon={Zap}
+          label="Actividades"
+          to="/actividades"
+          collapsed={collapsed}
           />
 
           <SidebarItem
-            icon={Ticket}
-            label="Tickets"
-            collapsed={collapsed}
-          />
-
-          <SidebarItem
-            icon={Zap}
-            label="Actividades"
-            collapsed={collapsed}
-          />
-
-          <SidebarItem
-            icon={UserRoundCog}
-            label="Equipo"
-            collapsed={collapsed}
-          />
+         icon={UserRoundCog}
+         label="Equipo"
+         to="/equipo"
+        collapsed={collapsed}
+         />
 
           <SidebarItem
             icon={Settings}

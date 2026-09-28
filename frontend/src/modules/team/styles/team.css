@@ -1,0 +1,1753 @@
+/* =========================================================
+   MÓDULO DE EQUIPO
+   ========================================================= */
+
+.team-page {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  min-height: 100%;
+  flex-direction: column;
+  padding: 18px 22px 24px;
+  color: #172033;
+}
+
+/* Encabezado */
+
+.team-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px;
+  border: 1px solid #dfe8f1;
+  border-radius: 11px 11px 0 0;
+  background: #ffffff;
+}
+
+.team-header h1 {
+  margin: 0;
+  color: #172033;
+  font-size: 23px;
+  line-height: 1.2;
+}
+
+.team-header p {
+  margin: 5px 0 0;
+  color: #8a99ab;
+  font-size: 8px;
+}
+
+.team-new-button {
+  display: inline-flex;
+  min-height: 35px;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 7px;
+  color: #ffffff;
+  background: #42b5df;
+  font-family: inherit;
+  font-size: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.team-new-button:hover {
+  background: #32a8d6;
+}
+
+/* Filtros */
+
+.team-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px 16px;
+  border-right: 1px solid #dfe8f1;
+  border-bottom: 1px solid #dfe8f1;
+  border-left: 1px solid #dfe8f1;
+  border-radius: 0 0 11px 11px;
+  background: #ffffff;
+}
+
+.team-status-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.team-status-filters button {
+  display: inline-flex;
+  min-height: 25px;
+  align-items: center;
+  gap: 5px;
+  padding: 0 8px;
+  border: 1px solid #dce5ee;
+  border-radius: 999px;
+  color: #718197;
+  background: #ffffff;
+  font-family: inherit;
+  font-size: 7px;
+  cursor: pointer;
+}
+
+.team-status-filters button:hover,
+.team-status-filters button.is-active {
+  border-color: #42b5df;
+  color: #278fc2;
+  background: #eaf7fc;
+}
+
+.team-status-filters button > i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.team-filter-available > i {
+  background: #20b56d;
+}
+
+.team-filter-busy > i {
+  background: #f3a51b;
+}
+
+.team-filter-absent > i {
+  background: #ef596f;
+}
+
+.team-status-filters button > span {
+  display: inline-grid;
+  min-width: 17px;
+  height: 16px;
+  place-items: center;
+  padding: 0 4px;
+  border-radius: 999px;
+  color: #718197;
+  background: #edf2f6;
+  font-size: 6px;
+}
+
+.team-search {
+  display: flex;
+  width: min(230px, 100%);
+  min-height: 31px;
+  align-items: center;
+  gap: 7px;
+  padding: 0 9px;
+  border: 1px solid #dce5ee;
+  border-radius: 6px;
+  color: #9aa7b6;
+  background: #ffffff;
+}
+
+.team-search:focus-within {
+  border-color: #42b5df;
+  box-shadow: 0 0 0 3px rgba(66, 181, 223, 0.1);
+}
+
+.team-search input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  color: #52647a;
+  background: transparent;
+  font-family: inherit;
+  font-size: 8px;
+}
+
+.team-search input::placeholder {
+  color: #a8b4c2;
+}
+
+/* Integrantes */
+
+.team-members-grid {
+  display: grid;
+  flex: 1;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 11px;
+  margin-top: 12px;
+}
+
+.team-member-card {
+  display: flex;
+  min-width: 0;
+  min-height: 190px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 14px 10px;
+  border: 1px solid #dfe8f1;
+  border-radius: 10px;
+  color: inherit;
+  background: #ffffff;
+  font-family: inherit;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.team-member-card:hover {
+  border-color: #9ddbf1;
+  box-shadow: 0 8px 20px rgba(50, 105, 135, 0.1);
+  transform: translateY(-2px);
+}
+
+.team-member-avatar {
+  position: relative;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  color: #ffffff;
+  box-shadow: 0 0 0 1px #dce5ee;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.avatar-blue {
+  background: linear-gradient(135deg, #42b5df, #496ed4);
+}
+
+.avatar-cyan {
+  background: linear-gradient(135deg, #22c1c3, #42b5df);
+}
+
+.avatar-purple {
+  background: linear-gradient(135deg, #9b7cf6, #685acf);
+}
+
+.avatar-violet {
+  background: linear-gradient(135deg, #576de8, #825bd4);
+}
+
+.avatar-dark {
+  background: linear-gradient(135deg, #334155, #64748b);
+}
+
+.avatar-pink {
+  background: linear-gradient(135deg, #e879b9, #9b7cf6);
+}
+
+.avatar-orange {
+  background: linear-gradient(135deg, #f3a51b, #df6c37);
+}
+
+.team-member-presence {
+  position: absolute;
+  right: -1px;
+  bottom: 2px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+}
+
+.team-member-presence.is-available {
+  background: #20b56d;
+}
+
+.team-member-presence.is-busy {
+  background: #f3a51b;
+}
+
+.team-member-presence.is-absent {
+  background: #ef596f;
+}
+
+.team-member-card > strong {
+  margin-top: 10px;
+  overflow: hidden;
+  max-width: 100%;
+  color: #263449;
+  font-size: 9px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.team-member-role {
+  margin-top: 4px;
+  overflow: hidden;
+  max-width: 100%;
+  color: #278fc2;
+  font-size: 7px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.team-member-card > small {
+  margin-top: 3px;
+  overflow: hidden;
+  max-width: 100%;
+  color: #9aa7b6;
+  font-size: 6px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.team-member-status {
+  display: inline-flex;
+  min-height: 21px;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  padding: 0 8px;
+  border-radius: 999px;
+  font-size: 6px;
+  font-weight: 600;
+}
+
+.team-member-status > i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.team-member-status.is-available {
+  color: #218653;
+  background: #dcf5e6;
+}
+
+.team-member-status.is-available > i {
+  background: #20b56d;
+}
+
+.team-member-status.is-busy {
+  color: #b77500;
+  background: #fff0c7;
+}
+
+.team-member-status.is-busy > i {
+  background: #f3a51b;
+}
+
+.team-member-status.is-absent {
+  color: #d94353;
+  background: #ffe4e7;
+}
+
+.team-member-status.is-absent > i {
+  background: #ef596f;
+}
+
+.team-empty {
+  grid-column: 1 / -1;
+  display: grid;
+  min-height: 250px;
+  place-content: center;
+  border: 1px solid #dfe8f1;
+  border-radius: 10px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.team-empty h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.team-empty p {
+  margin: 6px 0 0;
+  color: #8a99ab;
+  font-size: 9px;
+}
+
+/* Adaptación */
+
+@media (max-width: 1100px) {
+  .team-members-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 850px) {
+  .team-members-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .team-page {
+    padding: 14px;
+  }
+
+  .team-header,
+  .team-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .team-new-button {
+    align-self: flex-start;
+  }
+
+  .team-search {
+    width: 100%;
+  }
+
+  .team-members-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 420px) {
+  .team-members-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================================
+   PERFIL DEL INTEGRANTE
+   ========================================================= */
+
+.team-profile-page {
+  width: 100%;
+  min-width: 0;
+  padding: 18px 22px 24px;
+  color: #172033;
+}
+
+.team-profile-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 9px;
+  color: #91a0b2;
+  font-size: 8px;
+}
+
+.team-profile-breadcrumb button {
+  padding: 0;
+  border: 0;
+  color: #36aee0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.team-profile-breadcrumb strong {
+  color: #718197;
+  font-weight: 500;
+}
+
+.team-profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px 16px;
+  border: 1px solid #dfe8f1;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.team-profile-header h1 {
+  margin: 0;
+  color: #172033;
+  font-size: 21px;
+}
+
+.team-profile-edit {
+  display: inline-flex;
+  min-height: 33px;
+  align-items: center;
+  gap: 6px;
+  padding: 0 11px;
+  border: 0;
+  border-radius: 7px;
+  color: #ffffff;
+  background: #42b5df;
+  font-family: inherit;
+  font-size: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Resumen del integrante */
+
+.team-profile-summary {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) 230px;
+  align-items: center;
+  gap: 14px;
+  margin-top: 11px;
+  padding: 15px;
+  border: 1px solid #dfe8f1;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.team-profile-avatar {
+  position: relative;
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  color: #ffffff;
+  box-shadow: 0 0 0 1px #dce5ee;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.team-profile-information {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.team-profile-information > strong {
+  color: #263449;
+  font-size: 13px;
+}
+
+.team-profile-information > span {
+  margin-top: 3px;
+  color: #52647a;
+  font-size: 8px;
+}
+
+.team-profile-labels {
+  display: flex;
+  gap: 5px;
+  margin-top: 6px;
+}
+
+.team-profile-labels span {
+  padding: 3px 7px;
+  border-radius: 999px;
+  color: #218653;
+  background: #dcf5e6;
+  font-size: 6px;
+}
+
+.team-profile-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 8px;
+  color: #8a99ab;
+  font-size: 7px;
+}
+
+.team-profile-capacity {
+  display: flex;
+  flex-direction: column;
+}
+
+.team-profile-capacity > strong {
+  color: #52647a;
+  font-size: 8px;
+}
+
+.team-profile-capacity > span {
+  margin-top: 3px;
+  color: #8a99ab;
+  font-size: 7px;
+}
+
+.team-profile-capacity > div {
+  height: 6px;
+  margin-top: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e5ebf1;
+}
+
+.team-profile-capacity > div i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #42b5df;
+}
+
+.team-profile-capacity > small {
+  margin-top: 4px;
+  color: #42aeda;
+  font-size: 6px;
+}
+
+.team-profile-capacity p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 7px 0 0;
+  color: #8a99ab;
+  font-size: 6px;
+}
+
+/* Indicadores */
+
+.team-profile-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 11px;
+}
+
+.team-profile-kpis article {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid #dfe8f1;
+  border-radius: 9px;
+  background: #ffffff;
+}
+
+.team-profile-kpis article > div {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.team-profile-kpis article span {
+  color: #718197;
+  font-size: 7px;
+}
+
+.team-profile-kpis article strong {
+  margin-top: 4px;
+  color: #172033;
+  font-size: 17px;
+}
+
+.team-profile-kpis article small {
+  margin-top: 3px;
+  overflow: hidden;
+  color: #9aa7b6;
+  font-size: 6px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.team-profile-kpis article > i {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  place-items: center;
+  border-radius: 8px;
+  font-style: normal;
+}
+
+.team-profile-kpis .is-blue {
+  color: #2ba8d8;
+  background: #e3f5fc;
+}
+
+.team-profile-kpis .is-green {
+  color: #22a865;
+  background: #e1f7ea;
+}
+
+.team-profile-kpis .is-yellow {
+  color: #d78b0a;
+  background: #fff1c9;
+}
+
+.team-profile-kpis .is-red {
+  color: #ef596f;
+  background: #ffe5e8;
+}
+
+/* Distribución inferior */
+
+.team-profile-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(280px, 0.95fr);
+  align-items: start;
+  gap: 11px;
+  margin-top: 11px;
+}
+
+.team-profile-main,
+.team-profile-sidebar {
+  min-width: 0;
+}
+
+.team-profile-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.team-profile-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #dfe8f1;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.team-profile-card-heading {
+  display: flex;
+  min-height: 45px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 12px;
+}
+
+.team-profile-card-heading h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 11px;
+}
+
+.team-profile-card-heading > button {
+  padding: 0;
+  border: 0;
+  color: #2ba8d8;
+  background: transparent;
+  font-family: inherit;
+  font-size: 6px;
+  cursor: pointer;
+}
+
+.team-profile-ticket-filters {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.team-profile-ticket-filters select {
+  min-height: 27px;
+  padding: 0 7px;
+  border: 1px solid #dce5ee;
+  border-radius: 6px;
+  color: #64758a;
+  background: #ffffff;
+  font-family: inherit;
+  font-size: 6px;
+}
+
+.team-profile-ticket-filters button {
+  border: 0;
+  color: #2ba8d8;
+  background: transparent;
+  font-family: inherit;
+  font-size: 6px;
+  cursor: pointer;
+}
+
+/* Tabla de tickets */
+
+.team-profile-table-container {
+  margin: 0 11px 11px;
+  overflow: hidden;
+  border: 1px solid #e3eaf1;
+  border-radius: 7px;
+}
+
+.team-profile-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.team-profile-table th,
+.team-profile-table td {
+  padding: 8px 6px;
+  border-bottom: 1px solid #edf1f5;
+  color: #65768b;
+  font-size: 6px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.team-profile-table th {
+  color: #5d6f85;
+  background: #f1f5f8;
+  font-size: 5.5px;
+  text-transform: uppercase;
+}
+
+.team-profile-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.team-profile-table th:nth-child(1) {
+  width: 24%;
+}
+
+.team-profile-table th:nth-child(2) {
+  width: 25%;
+}
+
+.team-profile-table th:nth-child(3),
+.team-profile-table th:nth-child(4) {
+  width: 14%;
+}
+
+.team-profile-table th:nth-child(5),
+.team-profile-table th:nth-child(6) {
+  width: 11.5%;
+}
+
+.team-profile-table td:first-child {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.team-profile-table td:first-child strong {
+  overflow: hidden;
+  color: #334155;
+  font-size: 6.5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.team-profile-table td:first-child button {
+  width: fit-content;
+  margin-top: 2px;
+  padding: 0;
+  border: 0;
+  color: #2ba8d8;
+  background: transparent;
+  font-family: inherit;
+  font-size: 5.5px;
+  cursor: pointer;
+}
+
+.team-table-priority,
+.team-table-status {
+  display: inline-flex;
+  min-height: 18px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  border-radius: 999px;
+  font-size: 5.5px;
+  white-space: nowrap;
+}
+
+.team-table-priority.is-low {
+  color: #278fc2;
+  background: #dff3fb;
+}
+
+.team-table-priority.is-medium {
+  color: #c98208;
+  background: #fff0c7;
+}
+
+.team-table-priority.is-high {
+  color: #e14f5e;
+  background: #ffe4e7;
+}
+
+.team-table-priority.is-critical {
+  color: #ffffff;
+  background: #991b1b;
+}
+
+.team-table-status.is-progress {
+  color: #278fc2;
+  background: #e0f2fe;
+}
+
+.team-table-status.is-completed {
+  color: #218653;
+  background: #dcf5e6;
+}
+
+.team-table-status.is-delayed {
+  color: #e14f5e;
+  background: #ffe4e7;
+}
+
+.team-table-status.is-next {
+  color: #7258c7;
+  background: #eee9ff;
+}
+
+.team-days-delayed {
+  color: #ef596f !important;
+  font-weight: 700;
+}
+
+.team-days-positive {
+  color: #22a865 !important;
+  font-weight: 700;
+}
+
+/* Actividades recientes */
+
+.team-recent-activities {
+  padding: 0 11px 10px;
+}
+
+.team-recent-activities > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 0;
+  border-top: 1px solid #edf1f5;
+}
+
+.team-recent-activities > div > div:first-child {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.team-recent-activities strong {
+  overflow: hidden;
+  color: #334155;
+  font-size: 6.5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.team-recent-activities span {
+  color: #9aa7b6;
+  font-size: 5.5px;
+}
+
+/* Próximos eventos */
+
+.team-upcoming-events {
+  padding: 0 11px 10px;
+}
+
+.team-upcoming-events > div {
+  display: grid;
+  grid-template-columns: 31px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  border-top: 1px solid #edf1f5;
+}
+
+.team-event-date {
+  display: flex;
+  width: 29px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 6px;
+  color: #ef596f;
+  background: #fff0f2;
+}
+
+.team-event-date strong {
+  font-size: 9px;
+}
+
+.team-event-date span {
+  font-size: 5px;
+}
+
+.team-upcoming-events > div > div:last-child {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.team-upcoming-events > div > div:last-child strong {
+  overflow: hidden;
+  color: #334155;
+  font-size: 6.5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.team-upcoming-events > div > div:last-child span {
+  margin-top: 3px;
+  color: #9aa7b6;
+  font-size: 5.5px;
+}
+
+.team-profile-not-found {
+  padding: 35px;
+  border: 1px solid #dfe8f1;
+  border-radius: 11px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.team-profile-not-found h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.team-profile-not-found p {
+  color: #718197;
+  font-size: 9px;
+}
+
+.team-profile-not-found button {
+  min-height: 34px;
+  padding: 0 13px;
+  border: 0;
+  border-radius: 7px;
+  color: #ffffff;
+  background: #42b5df;
+  font-family: inherit;
+  font-size: 8px;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .team-profile-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 750px) {
+  .team-profile-summary {
+    grid-template-columns: auto 1fr;
+  }
+
+  .team-profile-capacity {
+    grid-column: 1 / -1;
+  }
+
+  .team-profile-kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .team-profile-card-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .team-profile-ticket-filters {
+    flex-wrap: wrap;
+  }
+
+  .team-profile-table-container {
+    overflow-x: auto;
+  }
+
+  .team-profile-table {
+    min-width: 650px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-profile-page {
+    padding: 14px;
+  }
+
+  .team-profile-summary {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .team-profile-avatar {
+    justify-self: center;
+  }
+
+  .team-profile-information {
+    align-items: center;
+  }
+
+  .team-profile-kpis {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================================================
+   CALENDARIO DEL INTEGRANTE
+   ========================================================= */
+
+.team-calendar-page {
+  width: 100%;
+  min-width: 0;
+  padding: 18px 22px 24px;
+  color: #172033;
+}
+
+.team-calendar-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 9px;
+  color: #91a0b2;
+  font-size: 8px;
+}
+
+.team-calendar-breadcrumb button {
+  padding: 0;
+  border: 0;
+  color: #36aee0;
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.team-calendar-breadcrumb strong {
+  color: #718197;
+  font-weight: 500;
+}
+
+.team-calendar-header {
+  padding: 14px 16px;
+  border: 1px solid #dfe8f1;
+  border-radius: 10px 10px 0 0;
+  background: #ffffff;
+}
+
+.team-calendar-header h1 {
+  margin: 0;
+  color: #172033;
+  font-size: 19px;
+}
+
+.team-calendar-header p {
+  margin: 5px 0 0;
+  color: #8a99ab;
+  font-size: 8px;
+}
+
+.team-calendar-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 16px;
+  border-right: 1px solid #dfe8f1;
+  border-bottom: 1px solid #dfe8f1;
+  border-left: 1px solid #dfe8f1;
+  background: #ffffff;
+}
+
+.team-calendar-toolbar > select {
+  min-width: 190px;
+  min-height: 30px;
+  padding: 0 9px;
+  border: 1px solid #dce5ee;
+  border-radius: 6px;
+  color: #52647a;
+  background: #ffffff;
+  font-family: inherit;
+  font-size: 7px;
+}
+
+.team-calendar-views {
+  display: flex;
+  overflow: hidden;
+  border: 1px solid #dce5ee;
+  border-radius: 6px;
+}
+
+.team-calendar-views button {
+  min-height: 29px;
+  padding: 0 11px;
+  border: 0;
+  border-right: 1px solid #dce5ee;
+  color: #718197;
+  background: #ffffff;
+  font-family: inherit;
+  font-size: 7px;
+  cursor: pointer;
+}
+
+.team-calendar-views button:last-child {
+  border-right: 0;
+}
+
+.team-calendar-views button.is-active {
+  color: #ffffff;
+  background: #42b5df;
+}
+
+/* Controles */
+
+.team-calendar-controls {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid #dfe8f1;
+  border-top: 0;
+  border-radius: 0 0 10px 10px;
+  background: #ffffff;
+}
+
+.team-calendar-filters {
+  display: flex;
+  gap: 5px;
+}
+
+.team-calendar-filters select {
+  min-height: 28px;
+  padding: 0 7px;
+  border: 1px solid #dce5ee;
+  border-radius: 6px;
+  color: #64758a;
+  background: #ffffff;
+  font-family: inherit;
+  font-size: 6px;
+}
+
+.team-calendar-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.team-calendar-navigation button {
+  display: grid;
+  min-width: 27px;
+  height: 27px;
+  place-items: center;
+  padding: 0 7px;
+  border: 1px solid #dce5ee;
+  border-radius: 6px;
+  color: #718197;
+  background: #ffffff;
+  font-family: inherit;
+  font-size: 6px;
+  cursor: pointer;
+}
+
+.team-calendar-navigation strong {
+  min-width: 90px;
+  color: #334155;
+  font-size: 8px;
+  text-align: center;
+}
+
+.team-calendar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 7px;
+}
+
+.team-calendar-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #718197;
+  font-size: 5.5px;
+}
+
+.team-calendar-legend i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.team-calendar-legend .is-activity i {
+  background: #42b5df;
+}
+
+.team-calendar-legend .is-meeting i {
+  background: #8b6de9;
+}
+
+.team-calendar-legend .is-deadline i {
+  background: #ef596f;
+}
+
+.team-calendar-legend .is-completed i {
+  background: #22b573;
+}
+
+/* Calendario */
+
+.team-calendar-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 255px;
+  min-width: 0;
+  margin-top: 11px;
+  overflow: hidden;
+  border: 1px solid #dfe8f1;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.team-calendar-grid {
+  display: grid;
+  min-width: 0;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  border-right: 1px solid #dfe8f1;
+}
+
+.team-calendar-weekday {
+  display: flex;
+  min-height: 30px;
+  align-items: center;
+  padding: 0 8px;
+  border-right: 1px solid #e7edf3;
+  border-bottom: 1px solid #e7edf3;
+  color: #65768b;
+  background: #f1f5f8;
+  font-size: 6px;
+  font-weight: 700;
+}
+
+.team-calendar-day {
+  display: flex;
+  min-width: 0;
+  min-height: 85px;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 6px;
+  border: 0;
+  border-right: 1px solid #edf1f5;
+  border-bottom: 1px solid #edf1f5;
+  color: #52647a;
+  background: #ffffff;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.team-calendar-day:hover,
+.team-calendar-day.is-selected {
+  background: #f0f9fd;
+}
+
+.team-calendar-day.is-outside {
+  color: #c0cad4;
+  background: #fbfcfd;
+  cursor: default;
+}
+
+.team-calendar-day > span {
+  display: grid;
+  width: 19px;
+  height: 19px;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 6px;
+}
+
+.team-calendar-day > span.is-today {
+  color: #ffffff;
+  background: #42b5df;
+  font-weight: 700;
+}
+
+.team-calendar-day-events {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 4px;
+}
+
+.calendar-event {
+  overflow: hidden;
+  width: 100%;
+  padding: 3px 4px;
+  border-radius: 3px;
+  font-size: 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.calendar-event.is-activity {
+  color: #237aa5;
+  background: #dff3fb;
+}
+
+.calendar-event.is-meeting {
+  color: #7258c7;
+  background: #eee9ff;
+}
+
+.calendar-event.is-deadline {
+  color: #d94353;
+  background: #ffe4e7;
+}
+
+.calendar-event.is-completed {
+  color: #218653;
+  background: #dcf5e6;
+}
+
+.calendar-event.is-pending {
+  color: #b77500;
+  background: #fff0c7;
+}
+
+/* Panel lateral */
+
+.team-calendar-sidebar {
+  min-width: 0;
+  padding: 12px;
+  background: #fbfcfd;
+}
+
+.team-calendar-sidebar > header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e7edf3;
+}
+
+.team-calendar-sidebar h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 10px;
+}
+
+.team-calendar-sidebar header span {
+  display: block;
+  margin-top: 4px;
+  color: #9aa7b6;
+  font-size: 6px;
+}
+
+.team-calendar-event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.team-calendar-event-card {
+  position: relative;
+  padding: 10px 9px 9px 12px;
+  overflow: hidden;
+  border: 1px solid #e1e8ef;
+  border-radius: 7px;
+  background: #ffffff;
+}
+
+.team-calendar-event-card::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 3px;
+  content: "";
+}
+
+.team-calendar-event-card.is-blue::before {
+  background: #42b5df;
+}
+
+.team-calendar-event-card.is-purple::before {
+  background: #8b6de9;
+}
+
+.team-calendar-event-card.is-orange::before {
+  background: #f3a51b;
+}
+
+.team-calendar-event-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.team-calendar-event-meta span {
+  padding: 2px 5px;
+  border-radius: 999px;
+  color: #278fc2;
+  background: #e3f5fc;
+  font-size: 5px;
+}
+
+.team-calendar-event-card > strong {
+  display: block;
+  margin-top: 7px;
+  color: #334155;
+  font-size: 7px;
+}
+
+.team-calendar-event-card p {
+  margin: 4px 0 0;
+  color: #8a99ab;
+  font-size: 6px;
+  line-height: 1.4;
+}
+
+@media (max-width: 1000px) {
+  .team-calendar-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .team-calendar-legend {
+    justify-content: flex-start;
+  }
+
+  .team-calendar-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .team-calendar-grid {
+    border-right: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .team-calendar-page {
+    padding: 14px;
+  }
+
+  .team-calendar-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .team-calendar-toolbar > select {
+    width: 100%;
+  }
+
+  .team-calendar-filters {
+    flex-wrap: wrap;
+  }
+
+  .team-calendar-grid {
+    overflow-x: auto;
+  }
+
+  .team-calendar-day,
+  .team-calendar-weekday {
+    min-width: 90px;
+  }
+}
+/* =========================================================
+   MODAL CREAR Y EDITAR INTEGRANTE
+   ========================================================= */
+
+.team-modal-overlay {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(2px);
+}
+
+.team-member-modal {
+  width: min(560px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  border-radius: 13px;
+  background: #ffffff;
+  box-shadow: 0 22px 55px rgba(15, 23, 42, 0.24);
+}
+
+.team-member-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 19px 21px 12px;
+}
+
+.team-member-modal-header h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 18px;
+}
+
+.team-member-modal-header p {
+  margin: 4px 0 0;
+  color: #8d9bad;
+  font-size: 8px;
+}
+
+.team-member-modal-close {
+  display: grid;
+  width: 29px;
+  height: 29px;
+  place-items: center;
+  border: 0;
+  border-radius: 7px;
+  color: #718197;
+  background: #f1f5f8;
+  cursor: pointer;
+}
+
+.team-member-form {
+  padding: 0 21px 20px;
+}
+
+.team-member-preview {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px;
+  border-radius: 8px;
+  background: #f5f9fc;
+}
+
+.team-member-preview-avatar {
+  display: grid;
+  width: 39px;
+  height: 39px;
+  flex: 0 0 39px;
+  place-items: center;
+  border-radius: 50%;
+  color: #ffffff;
+  background: linear-gradient(135deg, #42b5df, #685acf);
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.team-member-preview > div:last-child {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.team-member-preview strong {
+  overflow: hidden;
+  color: #29364a;
+  font-size: 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.team-member-preview span {
+  margin-top: 3px;
+  color: #8a99ab;
+  font-size: 7px;
+}
+
+.team-member-form-section {
+  padding: 14px 0;
+  border-bottom: 1px solid #e7edf3;
+}
+
+.team-member-form-section h3 {
+  margin: 0 0 11px;
+  color: #172033;
+  font-size: 10px;
+}
+
+.team-member-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.team-member-field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.team-member-form-section
+  > .team-member-field:first-of-type {
+  margin-top: 0;
+}
+
+.team-member-field > span {
+  margin-bottom: 5px;
+  color: #52647a;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.team-member-field > span b {
+  color: #ef4e5d;
+}
+
+.team-member-field input,
+.team-member-field select,
+.team-member-input-icon {
+  width: 100%;
+  min-height: 35px;
+  border: 1px solid #dce5ee;
+  border-radius: 7px;
+  outline: 0;
+  color: #52647a;
+  background: #ffffff;
+  font-family: inherit;
+  font-size: 8px;
+}
+
+.team-member-field > input,
+.team-member-field select {
+  padding: 0 9px;
+}
+
+.team-member-input-icon {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 9px;
+  color: #8291a4;
+}
+
+.team-member-input-icon input {
+  min-height: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.team-member-field input:focus,
+.team-member-field select:focus,
+.team-member-input-icon:focus-within {
+  border-color: #42b5df;
+  box-shadow: 0 0 0 3px rgba(66, 181, 223, 0.1);
+}
+
+.team-member-input-icon input:focus {
+  box-shadow: none;
+}
+
+.team-member-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding-top: 14px;
+}
+
+.team-member-cancel,
+.team-member-save {
+  min-height: 34px;
+  padding: 0 13px;
+  border-radius: 7px;
+  font-family: inherit;
+  font-size: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.team-member-cancel {
+  border: 1px solid #dce5ee;
+  color: #64758a;
+  background: #ffffff;
+}
+
+.team-member-save {
+  border: 1px solid #42b5df;
+  color: #ffffff;
+  background: #42b5df;
+}
+
+.team-member-save:disabled {
+  border-color: #ccd6df;
+  color: #91a0b2;
+  background: #e4eaf0;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .team-member-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
